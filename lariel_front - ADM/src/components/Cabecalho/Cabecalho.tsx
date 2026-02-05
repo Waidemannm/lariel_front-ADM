@@ -16,14 +16,14 @@ export default function Cabecalho () {
     }, []);
 
     return (
-    <header  className="sticky top-0 z-50 w-full z-50 flex items-center justify-between p-4 bg-gradient-to-r from-[var(--color-2)] to-[var(--color-2)] text-white shadow-lg md:flex-col md:gap-6 md: p-5 xl:flex-row xl:gap-0">
+    <header  className="sticky top-0 z-50 w-full z-50 flex items-center justify-between bg-gradient-to-r from-[var(--color-2)] to-[var(--color-2)] text-white shadow-lg md:flex-col  xl:flex-row">
         <div className="flex items-center">
             <h1 className="text-2xl font-bold flex items-center">
-                <img src={logo}alt="Logo Larissa e Samuel" className="w-20 h-20" />
+                <img src={logo}alt="Logo Larissa e Samuel" className="w-30 h-30" />
             </h1>
         </div>
         <MenuProvider>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center p-5 gap-4">
                 <div className="hidden md:block">
                     <Menu />
                 </div>
