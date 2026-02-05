@@ -21,7 +21,7 @@ const router = createBrowserRouter([
         {path: "/lista_presentes", element:<Presentes/>},
         {path: "/mural_recados", element:<Recados/>},
         {path: "/convites", element:<Convites/>},
-        {path: "/convidados", element:<Convidados/>}
+        {path: "/convidados/:idConvite", element:<Convidados/>}
     ]},
 ], {basename: import.meta.env.VITE_BASE_URL});
 
