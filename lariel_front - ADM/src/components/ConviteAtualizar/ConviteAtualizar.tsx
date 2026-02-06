@@ -6,4 +6,4 @@ export default function ConviteAtualizar({open,  onClose, children, }: {open: bo
            </div>
         </div>
     );
-}
+} 

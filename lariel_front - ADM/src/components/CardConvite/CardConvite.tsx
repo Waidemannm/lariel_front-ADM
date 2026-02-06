@@ -12,9 +12,9 @@ export default function CardConvite(props: {convite: TipoConvite}){
                 <div className="flex flex-col items-center">
                     <h1 className="convite-nome">{props.convite.nomeConvite}</h1>
                     <p className="text-sm">e Família</p>
-                    <p className="text-0.5rem mt-5">Id do convite: <span className="font-medium">{props.convite.idConvite}</span></p>
+                    <p className="text-[var(--color-2)] text-0.5rem mt-5">Id do convite: <span className="text-white font-medium">{props.convite.idConvite}</span></p>
                 </div>
             </div>        
         </div>
     );
-} 
+}  

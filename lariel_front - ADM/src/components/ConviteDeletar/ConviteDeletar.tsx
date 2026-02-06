@@ -6,4 +6,4 @@ export default function ConviteDELETAR({open,  onClose, children, }: {open: bool
            </div>
         </div>
     );
-}
+} 
