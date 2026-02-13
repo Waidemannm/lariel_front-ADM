@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useMenu } from "../hooks/useMenu";
 import React, { useEffect, useState } from 'react';
-import { FaEnvelopeOpenText ,FaFacebookF, FaInstagram, FaYoutube, FaHome, FaRegCalendarCheck, FaGift,FaRegCommentDots} from 'react-icons/fa';
+import { FaEnvelopeOpenText ,FaFacebookF, FaInstagram, FaYoutube, FaHome, FaRegCalendarCheck, FaGift, FaRegClock, FaCheckCircle} from 'react-icons/fa';
 import type { TipoCasamento } from "../../../types//tipoCasamento";
 import dados from "../../../../db.json";
 
@@ -27,7 +27,7 @@ export default function MobilePanel(): React.ReactElement {
         };
         
     }, [isOpen]);
-
+ 
     return (
         <div
             id="mobile-menu"
@@ -90,12 +90,21 @@ export default function MobilePanel(): React.ReactElement {
                     </Link>
 
                     <Link 
-                        to="/mural_recados" 
+                        to="/pendentes_recados" 
                         className="flex items-center gap-3 p-3 rounded-lg transition-all duration-300 hover:bg-white/10 hover:text-blue-400 hover:scale-105 active:scale-95" 
                         role="menuitem"
                     >
-                        <FaRegCommentDots className="text-2xl" />
-                        <span>Mural de recados</span>
+                        <FaRegClock className="text-2xl" />
+                        <span>Recados Pendentes</span>
+                    </Link>
+
+                    <Link 
+                        to="/aceitos_recados" 
+                        className="flex items-center gap-3 p-3 rounded-lg transition-all duration-300 hover:bg-white/10 hover:text-blue-400 hover:scale-105 active:scale-95" 
+                        role="menuitem"
+                    >
+                        <FaCheckCircle className="text-2xl" />
+                        <span>Recados aceitos</span>
                     </Link>
 
                 </nav>
