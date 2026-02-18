@@ -5,7 +5,7 @@ import type { TipoRecadoAceito } from "../../types/tipoRecadoAceito";
 
 const URL_API = import.meta.env.VITE_URL_API;
 
-export default function RecadoAceitar({open,  onClose, children, mensagem, nomeConvidado}: {open: boolean; onClose: () => void; children: React.ReactNode; mensagem: string; nomeConvidado: string}){
+export default function RecadoAceitar({open,  onClose, children, mensagem, nomeConvidado, idRecado}: {open: boolean; onClose: () => void; children: React.ReactNode; mensagem: string; nomeConvidado: string; idRecado: number}){
 
     const navigate = useNavigate();
     const [loading, setLoading] = useState<boolean>(false);
@@ -20,17 +20,25 @@ export default function RecadoAceitar({open,  onClose, children, mensagem, nomeC
         try{
             setLoading(true);
             const response = await fetch(`${URL_API}/aceitos`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(recadoAceito),
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(recadoAceito),
             });
-            console.log(recadoAceito)
+            const responseDelete = await fetch(`${URL_API}/pendentes/${idRecado}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
             if (!response.ok) {
             throw new Error("Falha ao aceitar recado.");
             }
 
+            if (!responseDelete.ok) {
+            throw new Error("Falha ao aceitar recado.");
+            }
             alert("Recado aceito com sucesso!");
             navigate(`/pendentes_recados`);
             window.location.reload();

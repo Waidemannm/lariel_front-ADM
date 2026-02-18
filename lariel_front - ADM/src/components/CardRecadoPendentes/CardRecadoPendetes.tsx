@@ -18,11 +18,10 @@ export default function CardRecadoPendentes (props: {recado: TipoRecadoPendente}
                 </div>
                 <img src={logo}alt="Logo Larissa e Samuel" className="w-23 h-auto md:w-30" />
                 <div className="convite-deletar">
-                    <button className="bg-red-400 cursor-pointer rounded-xl border-2 border-red-400 font-medium w-20 md:w-25 h-13" onClick={() => setOpenAceitarRecado(true)}>Aceitar</button>
-                    <RecadoAceitar open={openAceitarRecado} onClose={() => setOpenAceitarRecado(false)} mensagem={props.recado.mensagem} nomeConvidado={props.recado.nomeConvidados}> </RecadoAceitar>
+                    <button className="bg-green-400 cursor-pointer rounded-xl border-2 border-green-400 font-medium w-20 md:w-25 h-13" onClick={() => setOpenAceitarRecado(true)}>Aceitar</button>
+                    <RecadoAceitar open={openAceitarRecado} onClose={() => setOpenAceitarRecado(false)} mensagem={props.recado.mensagem} nomeConvidado={props.recado.nomeConvidados} idRecado={props.recado.idRecadoPendente}> </RecadoAceitar>
                 </div>
             </div>
-            <p>Id recado: {props.recado.idRecadoPendente}</p>
             <hr className="border-t border-white mt-10" />
             <div className="flex flex-col ">
                 <h1 className="font-bold text-2xl">{props.recado.nomeConvidados}</h1>
