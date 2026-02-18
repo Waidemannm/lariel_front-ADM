@@ -45,7 +45,7 @@ export default function ConviteDELETAR({open,  onClose, children, }: {open: bool
                     <button className="absolute top-2 right-2 rounded-md text-blue-500 m-1" onClick={onClose}>Fechar</button> {children}
                     <h1 className="text-xl text-[var(--color-font-black)] font-medium text-center mt-10">Deseja deletar o convite?</h1>
                     <div className="flex justify-center m-5">
-                        <button className="bg-gradient-to-br text-white from-[var(--color-2)] via-blue-300 to-[var(--color-2)] cursor-pointer rounded-xl border-2 border-[var(--color-font-black)] font-medium w-20 md:w-25 h-13 md:h-12" onClick={handleSubmit} disabled={loading}>Deletar</button>
+                        <button className="bg-[var(--color-2)] text-white cursor-pointer rounded-xl border-2 border-[var(--color-font-black)] font-medium w-20 md:w-25 h-13 md:h-12" onClick={handleSubmit} disabled={loading}>Deletar</button>
                     </div>            
                 </div>
             </div>

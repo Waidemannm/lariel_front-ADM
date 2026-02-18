@@ -4,10 +4,32 @@ import React, { useEffect, useState } from 'react';
 import { FaEnvelopeOpenText ,FaFacebookF, FaInstagram, FaYoutube, FaHome, FaRegCalendarCheck, FaGift, FaRegClock, FaCheckCircle} from 'react-icons/fa';
 import type { TipoCasamento } from "../../../types//tipoCasamento";
 import dados from "../../../../db.json";
+import type { TipoRecadoPendente } from "../../../types/tipoRecadoPendente";
+
+const URL_API = import.meta.env.VITE_URL_API;
 
 export default function MobilePanel(): React.ReactElement {
 
     const [casamento, setCasamento] = useState<TipoCasamento>();
+
+    const [recadosPendentes, setRecadosPendentes] = useState<TipoRecadoPendente[]>([]);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchRecadosPendentes = async () => {
+        try {
+            const response = await fetch(`${URL_API}/pendentes`);
+            if (!response.ok) {
+            throw new Error("Falha ao buscar os dados. O servidor está online?");
+            }
+            const data: TipoRecadoPendente[] = await response.json();
+            setRecadosPendentes(data);
+        } catch (err) {
+            setError(err instanceof Error ? err.message : "Um erro inesperado ocorreu.");
+        } 
+        };
+        fetchRecadosPendentes();
+    }, []);
     
     useEffect(() => {
         setCasamento(dados.casamento[0]); 
@@ -91,11 +113,15 @@ export default function MobilePanel(): React.ReactElement {
 
                     <Link 
                         to="/pendentes_recados" 
-                        className="flex items-center gap-3 p-3 rounded-lg transition-all duration-300 hover:bg-white/10 hover:text-blue-400 hover:scale-105 active:scale-95" 
+                        className="relative flex items-center gap-3 p-3 rounded-lg transition-all duration-300 hover:bg-white/10 hover:text-blue-400 hover:scale-105 active:scale-95"
                         role="menuitem"
-                    >
+                        >
                         <FaRegClock className="text-2xl" />
                         <span>Recados Pendentes</span>
+
+                        {recadosPendentes.length > 0 && (
+                            <span className="absolute top-2 right-2 w-3 h-3 bg-red-500 rounded-full border-2 border-white animate-pulse"></span>
+                        )}
                     </Link>
 
                     <Link 
