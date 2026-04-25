@@ -136,9 +136,9 @@ export default function MobilePanel(): React.ReactElement {
                 </nav>
 
                 <div className="mt-12 flex items-center gap-8">
-                    <Link target="_blank" rel="noopner noreferrer" to={`${casamento?.urlFacebook}`} aria-label="Facebook" className="p-3 rounded-full bg-white/5 transition-all duration-300 hover:bg-blue-500 hover:scale-110 hover:rotate-12 active:scale-95" ><FaFacebookF className="text-xl" /></Link>
-                    <Link target="_blank" rel="noopner noreferrer" to={`${casamento?.urlInstagram}`} aria-label="Instagram" className="p-3 rounded-full bg-white/5 transition-all duration-300 hover:bg-blue-500 hover:scale-110 hover:rotate-12 active:scale-95" ><FaInstagram className="text-x" /></Link>
-                    <Link target="_blank" rel="noopner noreferrer" to={`${casamento?.ulrYouTube}`} aria-label="YouTube" className="p-3 rounded-full bg-white/5 transition-all duration-300 hover:bg-blue-500 hover:scale-110 hover:rotate-12 active:scale-95" ><FaYoutube className="text-x" /></Link>
+                    <Link target="_blank" rel="noopner noreferrer" to="https://www.instagram.com/lari.guiara/" aria-label="Instagram" className="flex items-center flex-col"  ><FaInstagram className="text-[1.2rem]" /><p>Larissa</p></Link>   
+                    <Link target="_blank" rel="noopner noreferrer" to="https://www.instagram.com/samuuel.barbosa/" aria-label="Instagram" className="flex items-center flex-col" ><FaInstagram className="text-[1.2rem]" /><p>Samuel</p></Link>
+
                 </div>
             </div>
         </div>

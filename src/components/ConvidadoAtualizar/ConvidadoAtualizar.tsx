@@ -27,7 +27,7 @@ export default function ConvidadoAtualizar({open,  onClose, children, }: {open: 
                 throw new Error("Falha ao atualizar dados do convite. O servidor está online?");
             }
             alert("Convite atualizado com sucesso!");
-            navigate(`/convidados/${idConvite}`);
+            navigate(`/`);
             window.location.reload();
             setLoading(false);
         } catch (err) {
