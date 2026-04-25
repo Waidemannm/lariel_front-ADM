@@ -40,7 +40,7 @@ export default function RecadoAceitar({open,  onClose, children, mensagem, nomeC
             throw new Error("Falha ao aceitar recado.");
             }
             alert("Recado aceito com sucesso!");
-            navigate(`/pendentes_recados`);
+            navigate(`/`);
             window.location.reload();
             setLoading(false);
         } catch (err) {

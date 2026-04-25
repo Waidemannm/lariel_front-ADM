@@ -37,7 +37,7 @@ export default function ConvidadoSalvar({open,  onClose, children, }: {open: boo
             setLoading(false);
         } catch (err) {
         alert("Falha ao salvar convidado!");
-        navigate(`/convidados/${idConvite}`);
+        navigate(`/`);
         window.location.reload();
         
       } finally {

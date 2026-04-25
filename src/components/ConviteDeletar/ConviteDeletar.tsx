@@ -29,7 +29,7 @@ export default function ConviteDELETAR({open,  onClose, children, }: {open: bool
 
         } catch (err) {
             alert("Falha ao deletar convite!");
-            navigate("/convites");
+            navigate("/");
         } finally {
             setLoading(false);
         }

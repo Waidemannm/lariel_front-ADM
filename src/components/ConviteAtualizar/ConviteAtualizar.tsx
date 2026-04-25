@@ -32,7 +32,7 @@ export default function ConviteAtualizar({open,  onClose, children, }: {open: bo
             setLoading(false);
         } catch (err) {
         alert("Falha ao atualizar convite!");
-        navigate("/convites");
+        navigate("/");
         window.location.reload();
       } finally {
         setLoading(false);

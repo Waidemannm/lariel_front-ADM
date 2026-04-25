@@ -25,7 +25,7 @@ export default function RecadoRecusar({open,  onClose, children, idRecado}: {ope
             }
 
             alert("Recado deletado com sucesso!");
-            navigate(`/pendentes_recados`);
+            navigate(`/`);
             window.location.reload();
             setLoading(false);
         } catch (err) {
